@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Shopping List</string>
+
+    <!-- Add Shopping Item Fragment -->
+    <string name="name">Name</string>
+    <string name="amount">Amount</string>
+    <string name="price_per_item">Price per item</string>
+    <string name="add">Add</string>
+
+    <!-- Image Pick Fragment -->
+    <string name="search_for_images">Search for images…</string>
+</resources>
