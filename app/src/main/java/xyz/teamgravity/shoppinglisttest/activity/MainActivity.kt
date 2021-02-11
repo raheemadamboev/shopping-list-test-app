@@ -1,4 +1,4 @@
-package xyz.teamgravity.shoppinglisttest
+package xyz.teamgravity.shoppinglisttest.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
