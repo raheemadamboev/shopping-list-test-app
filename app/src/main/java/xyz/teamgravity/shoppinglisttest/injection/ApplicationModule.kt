@@ -11,6 +11,9 @@ import xyz.teamgravity.shoppinglisttest.api.PixabayApi
 import xyz.teamgravity.shoppinglisttest.helper.constants.PixabayApiConstants
 import xyz.teamgravity.shoppinglisttest.helper.constants.ShoppingDatabase
 import xyz.teamgravity.shoppinglisttest.viewmodel.MyDatabase
+import xyz.teamgravity.shoppinglisttest.viewmodel.ParentRepository
+import xyz.teamgravity.shoppinglisttest.viewmodel.ShoppingDao
+import xyz.teamgravity.shoppinglisttest.viewmodel.ShoppingRepository
 import javax.inject.Singleton
 
 @Module
@@ -32,4 +35,7 @@ object ApplicationModule {
         .baseUrl(PixabayApiConstants.BASE_URL)
         .build()
         .create(PixabayApi::class.java)
+
+    @Provides
+    fun provideDefaultShoppingRepository(dao: ShoppingDao, api: PixabayApi) = ShoppingRepository(dao, api) as ParentRepository
 }
