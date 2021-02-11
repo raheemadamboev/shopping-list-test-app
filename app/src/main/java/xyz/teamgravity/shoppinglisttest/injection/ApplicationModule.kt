@@ -1,5 +1,6 @@
 package xyz.teamgravity.shoppinglisttest.injection
 
+import android.app.Application
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
@@ -22,7 +23,7 @@ object ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideMyDatabase(app: App) = Room.databaseBuilder(app, MyDatabase::class.java, ShoppingDatabase.DATABASE_NAME).build()
+    fun provideMyDatabase(app: Application) = Room.databaseBuilder(app, MyDatabase::class.java, ShoppingDatabase.DATABASE_NAME).build()
 
     @Singleton
     @Provides
@@ -37,5 +38,5 @@ object ApplicationModule {
         .create(PixabayApi::class.java)
 
     @Provides
-    fun provideDefaultShoppingRepository(dao: ShoppingDao, api: PixabayApi) = ShoppingRepository(dao, api) as ParentRepository
+    fun provideDefaultShoppingRepository(dao: ShoppingDao, api: PixabayApi): ParentRepository = ShoppingRepository(dao, api)
 }
