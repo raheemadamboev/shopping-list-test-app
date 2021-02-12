@@ -11,7 +11,9 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import xyz.teamgravity.shoppinglisttest.fragment.fragment.ShoppingFragment
 import xyz.teamgravity.shoppinglisttest.getOrAwaitValue
+import xyz.teamgravity.shoppinglisttest.launchFragmentInHiltContainer
 import xyz.teamgravity.shoppinglisttest.model.ShoppingItemModel
 import javax.inject.Inject
 import javax.inject.Named
@@ -42,6 +44,13 @@ class ShoppingDaoTest {
     @After
     fun teardown() {
         db.close()
+    }
+
+    @Test
+    fun testLaunchFragmentInHiltContainer() {
+        launchFragmentInHiltContainer<ShoppingFragment> {
+
+        }
     }
 
     @Test
